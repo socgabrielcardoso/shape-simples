@@ -70,3 +70,11 @@ O projeto utiliza tecnologias web no frontend e modelos carregados no navegador 
 - Interpretação de sinais faciais e oculares em tempo real.
 - Feedback visual imediato para o usuário.
 - Estrutura simples para estudo, demonstração e evolução incremental.
+
+## Propósito do projeto
+
+Este repositório representa a versão enxuta da ideia: provar que uma experiência de visão computacional pode ser rápida, compreensível e executável com poucos passos. Ele serve tanto como demonstração independente quanto como referência de simplicidade para projetos maiores de reconhecimento visual.
+
+### Valor de portfólio
+
+O projeto demonstra domínio prático de integração com webcam, processamento visual no navegador, landmarks, lógica geométrica e preocupação com privacidade. A prioridade aqui é eficiência: fazer o essencial funcionar bem antes de aumentar a complexidade.
