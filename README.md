@@ -1,5 +1,9 @@
 # DETECTOR DE FORMAS
 
+Projeto web leve de visão computacional criado para reconhecer formas construídas com as mãos e estados visuais dos olhos em tempo real pela webcam.
+
+A proposta é manter a experiência simples e direta: abrir no navegador, autorizar a câmera e obter feedback visual imediato, com processamento local e uma arquitetura pequena o suficiente para servir como laboratório e referência para projetos maiores.
+
 Projeto web com interface simples para detecção visual em tempo real.
 
 ## Recursos
