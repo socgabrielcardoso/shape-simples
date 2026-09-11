@@ -58,3 +58,15 @@ Também é possível formar um círculo pequeno encostando indicador e polegar d
 ## Privacidade
 
 O vídeo é processado no navegador. O projeto não grava nem envia imagens para um servidor próprio.
+
+## Arquitetura técnica
+
+O projeto utiliza tecnologias web no frontend e modelos carregados no navegador para realizar a análise da câmera em tempo real. A lógica foi mantida enxuta para reduzir dependências, facilitar testes visuais e permitir execução local sem necessidade de backend dedicado.
+
+### Pontos técnicos
+
+- Processamento de vídeo diretamente no browser.
+- Uso de landmarks das mãos para compor formas geométricas.
+- Interpretação de sinais faciais e oculares em tempo real.
+- Feedback visual imediato para o usuário.
+- Estrutura simples para estudo, demonstração e evolução incremental.
