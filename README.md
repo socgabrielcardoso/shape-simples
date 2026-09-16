@@ -1,80 +1,72 @@
-# DETECTOR DE FORMAS
+# Shape Simples
 
-Projeto web leve de visão computacional criado para reconhecer formas construídas com as mãos e estados visuais dos olhos em tempo real pela webcam.
+> **Lightweight Computer Vision Lab** — projeto pessoal e enxuto para estudo de visão computacional no navegador.
 
-A proposta é manter a experiência simples e direta: abrir no navegador, autorizar a câmera e obter feedback visual imediato, com processamento local e uma arquitetura pequena o suficiente para servir como laboratório e referência para projetos maiores.
+O **Shape Simples** foi criado para reconhecer formas construídas com as mãos e estados visuais dos olhos em tempo real pela webcam, mantendo a arquitetura pequena, direta e fácil de executar.
 
-Projeto web com interface simples para detecção visual em tempo real.
+A prioridade é experimentação prática: abrir no navegador, autorizar a câmera e observar o comportamento do processamento visual com feedback imediato.
 
 ## Recursos
 
-Formas reconhecidas com as mãos:
+### Formas reconhecidas com as mãos
 
-* TRIÂNGULO
-* QUADRADO
-* RETÂNGULO
-* LOSANGO
-* TRAPÉZIO
-* QUADRILÁTERO
-* CÍRCULO
-* OVAL
+- Triângulo
+- Quadrado
+- Retângulo
+- Losango
+- Trapézio
+- Quadrilátero
+- Círculo
+- Oval
 
-Estados reconhecidos pelos olhos:
+### Estados visuais dos olhos
 
-* ACORDADO
-* PISCANDO
-* PISCOU
-* DORMINDO
-* AUSENTE
+- Acordado
+- Piscando
+- Piscou
+- Dormindo
+- Ausente
 
 ## Execução
 
-1. Abra a pasta `vision-shape-detector` no Visual Studio Code.
-2. Instale a extensão `Live Server`.
-3. Abra o arquivo `index.html`.
-4. Clique com o botão direito no editor.
-5. Escolha `Open with Live Server`.
-6. Autorize o acesso à câmera.
+1. Abra a pasta do projeto no Visual Studio Code.
+2. Instale a extensão **Live Server**.
+3. Abra `index.html`.
+4. Selecione **Open with Live Server**.
+5. Autorize o acesso à câmera.
 
-## Gestos
+## Como os gestos são interpretados
 
-Use os dedos indicador e polegar das duas mãos como pontos da forma.
-
-Para um triângulo, aproxime dois pontos e mantenha os outros dois separados.
-
-Para quadrado, retângulo, losango ou trapézio, mantenha quatro pontos visíveis.
-
-Para círculo ou oval, aproxime os indicadores no alto e os polegares embaixo.
-
-Também é possível formar um círculo pequeno encostando indicador e polegar de uma mão.
+O projeto usa pontos de referência das mãos para compor formas geométricas. Indicadores e polegares das duas mãos funcionam como pontos principais da geometria, permitindo experimentar diferentes configurações visuais.
 
 ## Requisitos
 
-* Google Chrome ou Microsoft Edge atualizado
-* Câmera disponível
-* Conexão com a internet para carregar MediaPipe e os modelos
-* Live Server executando em `localhost` ou `127.0.0.1`
-
-## Privacidade
-
-O vídeo é processado no navegador. O projeto não grava nem envia imagens para um servidor próprio.
+- Google Chrome ou Microsoft Edge atualizado
+- Câmera disponível
+- Conexão com a internet para carregar MediaPipe e modelos utilizados
+- Live Server em `localhost` ou `127.0.0.1`
 
 ## Arquitetura técnica
 
-O projeto utiliza tecnologias web no frontend e modelos carregados no navegador para realizar a análise da câmera em tempo real. A lógica foi mantida enxuta para reduzir dependências, facilitar testes visuais e permitir execução local sem necessidade de backend dedicado.
+O processamento ocorre diretamente no navegador. A lógica foi mantida leve para reduzir dependências, facilitar testes visuais e permitir execução local sem backend dedicado.
 
-### Pontos técnicos
+### Conceitos praticados
 
-- Processamento de vídeo diretamente no browser.
-- Uso de landmarks das mãos para compor formas geométricas.
-- Interpretação de sinais faciais e oculares em tempo real.
-- Feedback visual imediato para o usuário.
-- Estrutura simples para estudo, demonstração e evolução incremental.
+- Processamento de vídeo no browser
+- Landmarks das mãos
+- Lógica geométrica
+- Sinais faciais e oculares aparentes
+- Feedback visual em tempo real
+- Processamento local e privacidade por padrão
 
-## Propósito do projeto
+## Privacidade e limitações
 
-Este repositório representa a versão enxuta da ideia: provar que uma experiência de visão computacional pode ser rápida, compreensível e executável com poucos passos. Ele serve tanto como demonstração independente quanto como referência de simplicidade para projetos maiores de reconhecimento visual.
+O projeto não grava nem envia imagens para um servidor próprio no fluxo padrão. Resultados dependem de fatores como iluminação, enquadramento, câmera e visibilidade dos pontos analisados.
 
-### Valor de portfólio
+Classificações visuais são experimentais e não devem ser usadas para diagnóstico, vigilância ou tomada automatizada de decisão sobre pessoas.
 
-O projeto demonstra domínio prático de integração com webcam, processamento visual no navegador, landmarks, lógica geométrica e preocupação com privacidade. A prioridade aqui é eficiência: fazer o essencial funcionar bem antes de aumentar a complexidade.
+---
+
+**Categoria:** Computer Vision • Browser • MediaPipe • Technical Lab
+
+**Status:** laboratório pessoal de estudo e experimentação.
