@@ -1,0 +1,36 @@
+name: Static Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type f -name "*.js" -not -path "./node_modules/*" -print0 | xargs -0 -r -n1 node --check
+
+      - name: Reject unresolved conflict markers
+        shell: bash
+        run: |
+          if grep -RInE '^(<<<<<<<|=======|>>>>>>>)' . --exclude-dir=.git --exclude='*.md'; then
+            echo "Unresolved merge-conflict markers found."
+            exit 1
+          fi
