@@ -70,3 +70,13 @@ Classificações visuais são experimentais e não devem ser usadas para diagnó
 **Categoria:** Computer Vision • Browser • MediaPipe • Technical Lab
 
 **Status:** laboratório pessoal de estudo e experimentação.
+
+## Auditoria de segurança e portfólio Cyber
+
+- [Registro de riscos do projeto](docs/SECURITY_RISK_REGISTER.md)
+- [Testes e critérios de aprovação](docs/SECURITY_VALIDATION_PLAN.md)
+- [Requisitos para implantação segura](docs/SECURE_DEPLOYMENT.md)
+- [Playbook de incidentes](docs/INCIDENT_PLAYBOOK.md)
+- [Estudo de caso e evidências reproduzíveis](docs/PORTFOLIO_EVIDENCE.md)
+
+A pipeline `.github/workflows/security-guard.yml` testa o detector de vazamento de credenciais e realiza varredura de alta confiança em arquivos versionados. Essa cobertura **não garante ausência de vulnerabilidades**; dependências, autenticação, autorização, privacidade e ambiente de produção precisam de validação independente. Não utilizar dados reais de usuários ou da empresa em exemplos públicos.
