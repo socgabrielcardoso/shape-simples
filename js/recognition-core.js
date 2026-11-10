@@ -305,6 +305,7 @@ export function classifyTwoHandShape(hands) {
 
 export function classifyShape(hands) {
   if (!Array.isArray(hands)) return null;
+  if (!hands.every(hand => Array.isArray(hand) && hand.length === 21 && hand.every(p => Number.isFinite(p?.x) && Number.isFinite(p?.y)))) return null;
   if (hands.length === 1) {
     return classifyOneHandShape(hands[0]);
   }
