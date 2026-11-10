@@ -55,3 +55,7 @@ test("Landmark bounding boxes cover both extremes", () => {
   const b=boundsOf([p(.1,.2),p(.9,.7)]);assert.equal(b.width,.8);assert.equal(b.height,.49999999999999994);
 });
 
+test("Empty bounds stay finite and zero-sized", () => {
+  const b=boundsOf([]);assert.equal(b.width,0);assert.equal(b.height,0);
+});
+
