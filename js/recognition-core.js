@@ -47,6 +47,10 @@ export function smoothDetectedHands(landmarks) {
     return smoothedHands;
   }
 
+  if (orderedHands.length === 2 && Math.abs(palmCenter(orderedHands[0]).x - palmCenter(orderedHands[1]).x) < 0.03) {
+    smoothedHands = orderedHands;
+    return smoothedHands;
+  }
   smoothedHands = orderedHands.map((hand, handIndex) =>
     hand.map((point, pointIndex) => {
       const previous = smoothedHands[handIndex][pointIndex];
