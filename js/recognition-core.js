@@ -241,6 +241,7 @@ export function classifyOneHandShape(hand) {
 }
 
 export function classifyTwoHandShape(hands) {
+  if (!Array.isArray(hands) || hands.length !== 2 || !hands.every(hand => Array.isArray(hand) && hand.length === 21)) return null;
   const descriptions = hands.map(describeHand).sort((first, second) => first.center.x - second.center.x);
   const left = descriptions[0];
   const right = descriptions[1];
