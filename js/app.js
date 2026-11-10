@@ -200,7 +200,8 @@ function stabilizeShape(observation, now) {
 function categoryScore(categories, name) {
   if (!Array.isArray(categories)) return 0;
   const category = categories.find(item => item.categoryName === name);
-  return category ? category.score : 0;
+  const score = Number(category?.score);
+  return Number.isFinite(score) ? Math.max(0,Math.min(1,score)) : 0;
 }
 
 function setEyeOutput(state) {
