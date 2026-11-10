@@ -51,3 +51,7 @@ test("Mirrored camera coordinates remain consistent", () => {
   assert.equal(visualPoint(p(.2,.3)).x,.8);
 });
 
+test("Landmark bounding boxes cover both extremes", () => {
+  const b=boundsOf([p(.1,.2),p(.9,.7)]);assert.equal(b.width,.8);assert.equal(b.height,.49999999999999994);
+});
+
