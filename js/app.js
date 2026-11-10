@@ -129,6 +129,7 @@ async function startCamera() {
   setRuntime("CÂMERA", "loading");
 
   try {
+    if (!window.isSecureContext) throw new Error("A câmera exige localhost ou HTTPS.");
     mediaStream = await navigator.mediaDevices.getUserMedia({
       video: {
         width: { ideal: 1280 },
