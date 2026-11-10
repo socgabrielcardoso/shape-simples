@@ -17,6 +17,7 @@ export function distance(a, b) {
 }
 
 export function averagePoint(points) {
+  if (!Array.isArray(points) || !points.length) return { x: NaN, y: NaN };
   const total = points.reduce(
     (sum, point) => ({ x: sum.x + point.x, y: sum.y + point.y }),
     { x: 0, y: 0 }
