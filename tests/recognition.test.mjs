@@ -131,3 +131,7 @@ test("Recognition rejects any invalid joint coordinates", () => {
   const hand=makeHand();hand[8].x=NaN;assert.equal(classifyShape([hand]),null);
 });
 
+test("Smoothing ignores hands missing key joints", () => {
+  resetHandSmoothing();assert.deepEqual(smoothDetectedHands([makeHand().slice(0,20)]),[]);
+});
+
