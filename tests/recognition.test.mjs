@@ -91,3 +91,7 @@ test("Recognize true parallelograms separately from quadrilaterals", () => {
   assert.equal(classifyQuadrilateral([p(.35,.25),p(.95,.25),p(.7,.4),p(.1,.4)])?.label,"PARALELOGRAMO");
 });
 
+test("Ignore incomplete four-corner proposals", () => {
+  assert.equal(classifyQuadrilateral([p(0,0),p(1,0),p(.5,1)]),null);
+});
+
