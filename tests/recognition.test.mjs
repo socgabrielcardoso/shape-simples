@@ -39,3 +39,7 @@ test("Reject missing point coordinates instead of inventing proximity", () => {
   assert.equal(distance(p(NaN,0),p(1,1)),Infinity);
 });
 
+test("Palm centroid averages valid landmarks", () => {
+  assert.deepEqual(averagePoint([p(.2,.4),p(.6,.8)]),{x:.4,y:.6000000000000001});
+});
+
