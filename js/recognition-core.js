@@ -151,7 +151,7 @@ function parallelDifference(first, second) {
 }
 
 export function classifyQuadrilateral(points) {
-  if (!Array.isArray(points) || points.length !== 4) return null;
+  if (!Array.isArray(points) || points.length !== 4 || !points.every(p => Number.isFinite(p?.x) && Number.isFinite(p?.y))) return null;
   const ordered = sortClockwise(points);
   const sides = ordered.map((point, index) =>
     distance(point, ordered[(index + 1) % ordered.length])
