@@ -300,10 +300,7 @@ export function classifyTwoHandShape(hands) {
     left.bottom
   ]);
 
-  return {
-    ...quadrilateral,
-    kind: "polygon"
-  };
+  return quadrilateral ? { ...quadrilateral, kind: "polygon" } : null;
 }
 
 export function classifyShape(hands) {
