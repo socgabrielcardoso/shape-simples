@@ -198,6 +198,7 @@ function stabilizeShape(observation, now) {
 }
 
 function categoryScore(categories, name) {
+  if (!Array.isArray(categories)) return 0;
   const category = categories.find(item => item.categoryName === name);
   return category ? category.score : 0;
 }
