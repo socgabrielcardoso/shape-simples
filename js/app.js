@@ -216,6 +216,8 @@ function updateEyeState(faceResult, now) {
   if (!face || !categories) {
     if (now - eyeTracker.lastFaceAt > 500) {
       eyeTracker.closedAt = null;
+      eyeTracker.leftScore = 0;
+      eyeTracker.rightScore = 0;
       setEyeOutput("AUSENTE");
     }
     return;
