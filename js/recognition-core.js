@@ -186,7 +186,7 @@ export function classifyQuadrilateral(points) {
     lineDirection(ordered[3], ordered[0])
   );
 
-  if (averageAngleError < 18 && sideRatio < 1.28) {
+  if (averageAngleError < 18 && sideRatio < 1.22) {
     return { label: "QUADRADO", points: ordered };
   }
 
