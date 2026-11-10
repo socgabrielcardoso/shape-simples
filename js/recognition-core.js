@@ -230,6 +230,7 @@ export function createEllipseShape(hands) {
 export function classifyOneHandShape(hand) {
   if (!Array.isArray(hand) || hand.length !== 21) return null;
   const description = describeHand(hand);
+  if (!Number.isFinite(description.palmWidth) || description.palmWidth < 0.012) return null;
   const pinchRatio = distance(description.index, description.thumb) / Math.max(description.palmWidth, 0.0001);
 
   if (pinchRatio > 0.38) {
