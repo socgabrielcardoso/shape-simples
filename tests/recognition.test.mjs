@@ -103,3 +103,7 @@ test("Reject overlapping corners of a shape", () => {
   assert.equal(classifyQuadrilateral([p(0,0),p(1,0),p(1,0),p(0,1)]),null);
 });
 
+test("Reject zero-area collinear shapes", () => {
+  assert.equal(classifyQuadrilateral([p(.1,.2),p(.3,.2),p(.5,.2),p(.7,.2)]),null);
+});
+
