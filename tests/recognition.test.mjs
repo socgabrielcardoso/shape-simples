@@ -107,3 +107,7 @@ test("Reject zero-area collinear shapes", () => {
   assert.equal(classifyQuadrilateral([p(.1,.2),p(.3,.2),p(.5,.2),p(.7,.2)]),null);
 });
 
+test("Infer round shapes only from complete finger arcs", () => {
+  assert.equal(createEllipseShape([makeHand()])?.kind,"ellipse");
+});
+
