@@ -83,3 +83,7 @@ test("Differentiate rhombi from square contours", () => {
   assert.equal(classifyQuadrilateral([p(.5,.1),p(.7,.5),p(.5,.9),p(.3,.5)])?.label,"LOSANGO");
 });
 
+test("Recognize trapezoids with one pair of parallel sides", () => {
+  assert.equal(classifyQuadrilateral([p(.3,.2),p(.7,.2),p(.8,.8),p(.2,.8)])?.label,"TRAPÉZIO");
+});
+
