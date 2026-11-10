@@ -143,6 +143,7 @@ async function startCamera() {
     await elements.video.play();
     resizeCanvas();
     cameraReady = true;
+    mediaStream.getVideoTracks()[0]?.addEventListener("ended", stopCamera, { once:true });
     elements.startButton.classList.add("is-hidden");
     setRuntime("ATIVO", "ready");
   } catch {
