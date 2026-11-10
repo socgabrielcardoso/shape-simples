@@ -376,9 +376,22 @@ function render(now) {
 }
 
 function stopCamera() {
-  if (mediaStream) {
-    mediaStream.getTracks().forEach(track => track.stop());
-  }
+  mediaStream?.getTracks().forEach(track => track.stop());
+  mediaStream = null;
+  cameraReady = false;
+  elements.video.srcObject = null;
+  lastInferenceAt = 0;
+  lastVideoTime = -1;
+  smoothedHands = [];
+  currentShape = null;
+  resetHandSmoothing();
+  shapeTracker.candidate = "";
+  shapeTracker.count = 0;
+  shapeTracker.stable = "NENHUMA";
+  elements.shapeName.textContent = "NENHUMA";
+  elements.startButton.classList.remove("is-hidden");
+  elements.startButton.disabled = !modelsReady;
+  setRuntime("PARADO","ready");
 }
 
 async function boot() {
