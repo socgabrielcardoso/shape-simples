@@ -127,3 +127,7 @@ test("Recognition handles missing hand observations", () => {
   assert.equal(classifyShape(null),null);
 });
 
+test("Recognition rejects any invalid joint coordinates", () => {
+  const hand=makeHand();hand[8].x=NaN;assert.equal(classifyShape([hand]),null);
+});
+
