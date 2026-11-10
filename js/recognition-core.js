@@ -304,6 +304,7 @@ export function classifyTwoHandShape(hands) {
 }
 
 export function classifyShape(hands) {
+  if (!Array.isArray(hands)) return null;
   if (hands.length === 1) {
     return classifyOneHandShape(hands[0]);
   }
