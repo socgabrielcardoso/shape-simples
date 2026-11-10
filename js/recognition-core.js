@@ -129,6 +129,7 @@ export function vertexAngle(previous, current, next) {
   };
   const dot = first.x * second.x + first.y * second.y;
   const magnitude = Math.hypot(first.x, first.y) * Math.hypot(second.x, second.y);
+  if (!Number.isFinite(magnitude) || magnitude < 1e-9) return 0;
   const cosine = Math.max(-1, Math.min(1, dot / magnitude));
 
   return Math.acos(cosine) * 180 / Math.PI;
