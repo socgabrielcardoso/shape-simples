@@ -135,3 +135,7 @@ test("Smoothing ignores hands missing key joints", () => {
   resetHandSmoothing();assert.deepEqual(smoothDetectedHands([makeHand().slice(0,20)]),[]);
 });
 
+test("Smoothing does not recover impossible missing numbers as landmarks", () => {
+  resetHandSmoothing();const hand=makeHand();hand[8].x=NaN;assert.deepEqual(smoothDetectedHands([hand]),[]);
+});
+
