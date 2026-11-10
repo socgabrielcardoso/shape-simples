@@ -346,7 +346,7 @@ function runInference(now) {
   lastVideoTime = elements.video.currentTime;
 
   const handResult = handLandmarker.detectForVideo(elements.video, now);
-  const faceResult = faceLandmarker.detectForVideo(elements.video, now);
+  const faceResult = faceLandmarker?.detectForVideo(elements.video, now) ?? null;
   const hands = smoothDetectedHands(handResult.landmarks || []);
   smoothedHands = hands;
   const observation = classifyShape(hands);
