@@ -164,6 +164,8 @@ export function classifyQuadrilateral(points) {
       ordered[(index + 1) % ordered.length]
     )
   );
+  const signedArea = ordered.reduce((sum,p,i) => sum + p.x * ordered[(i+1)%4].y - ordered[(i+1)%4].x * p.y, 0) / 2;
+  if (Math.abs(signedArea) < 0.001) return null;
   const longestSide = Math.max(...sides);
   const shortestSide = Math.max(Math.min(...sides), 0.0001);
   const sideRatio = longestSide / shortestSide;
