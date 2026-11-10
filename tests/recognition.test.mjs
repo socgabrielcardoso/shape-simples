@@ -95,3 +95,7 @@ test("Ignore incomplete four-corner proposals", () => {
   assert.equal(classifyQuadrilateral([p(0,0),p(1,0),p(.5,1)]),null);
 });
 
+test("Ignore nonfinite corners in polygons", () => {
+  assert.equal(classifyQuadrilateral([p(0,0),p(1,0),p(NaN,1),p(0,1)]),null);
+});
+
