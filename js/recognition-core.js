@@ -140,6 +140,7 @@ function lineDirection(first, second) {
 }
 
 function parallelDifference(first, second) {
+  if (![first,second].every(Number.isFinite)) return 180;
   let difference = Math.abs(first - second) % Math.PI;
 
   if (difference > Math.PI / 2) {
