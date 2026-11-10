@@ -115,3 +115,7 @@ test("One-hand recognition excludes incomplete landmark sets", () => {
   assert.equal(classifyOneHandShape(makeHand().slice(0,20)),null);
 });
 
+test("Bimanual classification requires two complete hands", () => {
+  assert.equal(classifyTwoHandShape([makeHand()]),null);
+});
+
