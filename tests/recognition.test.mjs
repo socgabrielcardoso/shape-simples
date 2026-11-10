@@ -71,3 +71,7 @@ test("Detect an aligned square", () => {
   assert.equal(classifyQuadrilateral(square)?.label,"QUADRADO");
 });
 
+test("Detect squares after camera rotation", () => {
+  assert.equal(classifyQuadrilateral(rotated(square,31))?.label,"QUADRADO");
+});
+
