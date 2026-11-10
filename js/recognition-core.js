@@ -248,6 +248,7 @@ export function classifyTwoHandShape(hands) {
   const bridge = distance(left.center, right.center);
   const palmScale = Math.max(left.palmWidth, right.palmWidth, 0.0001);
 
+  if (palmScale < 0.012) return null;
   if (bridge < Math.max(0.11, palmScale * 1.05)) {
     return null;
   }
