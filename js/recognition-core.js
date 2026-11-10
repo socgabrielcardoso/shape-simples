@@ -210,6 +210,7 @@ export function createEllipseShape(hands) {
   if (!Array.isArray(hands) || !hands.length || hands.length > 2 || !hands.every(hand => Array.isArray(hand) && hand.length === 21)) return null;
   const arcIndexes = [8, 7, 6, 5, 2, 3, 4];
   const arcPoints = hands.flatMap(hand => arcIndexes.map(index => visualPoint(hand[index])));
+  if (!arcPoints.every(p => Number.isFinite(p.x) && Number.isFinite(p.y))) return null;
   const bounds = boundsOf(arcPoints);
   const width = bounds.width * 1.06;
   const height = bounds.height * 1.08;
