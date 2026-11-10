@@ -190,7 +190,7 @@ export function classifyQuadrilateral(points) {
     return { label: "QUADRADO", points: ordered };
   }
 
-  if (averageAngleError < 22 && oppositeBalance < 1.38) {
+  if (averageAngleError < 18 && oppositeBalance < 1.38 && firstParallel < 18 && secondParallel < 18) {
     return { label: "RETÂNGULO", points: ordered };
   }
 
