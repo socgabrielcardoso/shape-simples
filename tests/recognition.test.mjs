@@ -111,3 +111,7 @@ test("Infer round shapes only from complete finger arcs", () => {
   assert.equal(createEllipseShape([makeHand()])?.kind,"ellipse");
 });
 
+test("One-hand recognition excludes incomplete landmark sets", () => {
+  assert.equal(classifyOneHandShape(makeHand().slice(0,20)),null);
+});
+
