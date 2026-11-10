@@ -34,7 +34,7 @@ export function palmCenter(hand) {
 }
 
 export function smoothDetectedHands(landmarks) {
-  const orderedHands = landmarks
+  const orderedHands = (Array.isArray(landmarks) ? landmarks : [])
     .map(hand => hand.map(point => ({ x: point.x, y: point.y, z: point.z || 0 })))
     .sort((first, second) => palmCenter(first).x - palmCenter(second).x);
 
