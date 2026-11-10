@@ -87,3 +87,7 @@ test("Recognize trapezoids with one pair of parallel sides", () => {
   assert.equal(classifyQuadrilateral([p(.3,.2),p(.7,.2),p(.8,.8),p(.2,.8)])?.label,"TRAPÉZIO");
 });
 
+test("Recognize true parallelograms separately from quadrilaterals", () => {
+  assert.equal(classifyQuadrilateral([p(.35,.25),p(.95,.25),p(.7,.4),p(.1,.4)])?.label,"PARALELOGRAMO");
+});
+
