@@ -214,6 +214,7 @@ export function createEllipseShape(hands) {
   const bounds = boundsOf(arcPoints);
   const width = bounds.width * 1.06;
   const height = bounds.height * 1.08;
+  if (Math.min(width,height) < 0.025) return null;
   const aspect = width / Math.max(height, 0.0001);
   const label = aspect >= 0.78 && aspect <= 1.28 ? "CÍRCULO" : "OVAL";
 
