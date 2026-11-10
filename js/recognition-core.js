@@ -202,6 +202,7 @@ export function classifyQuadrilateral(points) {
     return { label: "TRAPÉZIO", points: ordered };
   }
 
+  if (firstParallel < 18 && secondParallel < 18) return { label: "PARALELOGRAMO", points: ordered };
   return { label: "QUADRILÁTERO", points: ordered };
 }
 
