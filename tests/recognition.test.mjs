@@ -123,3 +123,7 @@ test("Two-hand contours distinguish rectangular gestures", () => {
   assert.equal(classifyTwoHandShape(makeRectangleHands())?.label,"RETÂNGULO");
 });
 
+test("Recognition handles missing hand observations", () => {
+  assert.equal(classifyShape(null),null);
+});
+
