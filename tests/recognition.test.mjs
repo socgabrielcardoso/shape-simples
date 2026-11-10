@@ -67,3 +67,7 @@ test("Overlapping joints do not emit NaN angles", () => {
   assert.equal(vertexAngle(p(0,0),p(0,0),p(1,0)),0);
 });
 
+test("Detect an aligned square", () => {
+  assert.equal(classifyQuadrilateral(square)?.label,"QUADRADO");
+});
+
