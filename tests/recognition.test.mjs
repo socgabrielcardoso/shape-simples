@@ -59,3 +59,7 @@ test("Empty bounds stay finite and zero-sized", () => {
   const b=boundsOf([]);assert.equal(b.width,0);assert.equal(b.height,0);
 });
 
+test("Right angle detection is invariant to point orientation", () => {
+  assert.equal(vertexAngle(p(0,1),p(0,0),p(1,0)),90);
+});
+
