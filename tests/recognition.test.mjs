@@ -35,3 +35,7 @@ test("Euclidean landmark distances preserve geometry", () => {
   assert.equal(distance(p(0,0),p(3,4)),5);
 });
 
+test("Reject missing point coordinates instead of inventing proximity", () => {
+  assert.equal(distance(p(NaN,0),p(1,1)),Infinity);
+});
+
