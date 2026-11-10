@@ -50,7 +50,8 @@ export function smoothDetectedHands(landmarks) {
   smoothedHands = orderedHands.map((hand, handIndex) =>
     hand.map((point, pointIndex) => {
       const previous = smoothedHands[handIndex][pointIndex];
-      const weight = 0.58;
+      const motion = Math.hypot(point.x - previous.x, point.y - previous.y);
+      const weight = Math.min(0.88, Math.max(0.38, 0.42 + motion * 3));
 
       return {
         x: previous.x + (point.x - previous.x) * weight,
