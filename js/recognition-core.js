@@ -207,6 +207,7 @@ export function classifyQuadrilateral(points) {
 }
 
 export function createEllipseShape(hands) {
+  if (!Array.isArray(hands) || !hands.length || hands.length > 2 || !hands.every(hand => Array.isArray(hand) && hand.length === 21)) return null;
   const arcIndexes = [8, 7, 6, 5, 2, 3, 4];
   const arcPoints = hands.flatMap(hand => arcIndexes.map(index => visualPoint(hand[index])));
   const bounds = boundsOf(arcPoints);
