@@ -37,6 +37,7 @@ export function smoothDetectedHands(landmarks) {
   const orderedHands = (Array.isArray(landmarks) ? landmarks : [])
     .filter(hand => Array.isArray(hand) && hand.length === 21)
     .map(hand => hand.map(point => ({ x: point?.x, y: point?.y, z: point?.z ?? 0 })))
+    .filter(hand => hand.every(point => [point.x,point.y,point.z].every(Number.isFinite)))
     .sort((first, second) => palmCenter(first).x - palmCenter(second).x);
 
   if (orderedHands.length !== smoothedHands.length) {
