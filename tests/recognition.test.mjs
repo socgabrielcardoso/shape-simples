@@ -75,3 +75,7 @@ test("Detect squares after camera rotation", () => {
   assert.equal(classifyQuadrilateral(rotated(square,31))?.label,"QUADRADO");
 });
 
+test("Differentiate rectangles from squares", () => {
+  assert.equal(classifyQuadrilateral([p(.1,.3),p(.9,.3),p(.9,.7),p(.1,.7)])?.label,"RETÂNGULO");
+});
+
