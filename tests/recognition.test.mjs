@@ -79,3 +79,7 @@ test("Differentiate rectangles from squares", () => {
   assert.equal(classifyQuadrilateral([p(.1,.3),p(.9,.3),p(.9,.7),p(.1,.7)])?.label,"RETÂNGULO");
 });
 
+test("Differentiate rhombi from square contours", () => {
+  assert.equal(classifyQuadrilateral([p(.5,.1),p(.7,.5),p(.5,.9),p(.3,.5)])?.label,"LOSANGO");
+});
+
