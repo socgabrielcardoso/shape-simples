@@ -110,7 +110,8 @@ async function loadModels() {
 
   const vision = await FilesetResolver.forVisionTasks(WASM_PATH);
   handLandmarker = await createHandDetector(vision);
-  faceLandmarker = await createFaceDetector(vision);
+  try { faceLandmarker = await createFaceDetector(vision); }
+  catch { faceLandmarker = null; }
   modelsReady = true;
 
   setRuntime("PRONTO", "ready");
