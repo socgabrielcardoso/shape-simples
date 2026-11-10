@@ -119,3 +119,7 @@ test("Bimanual classification requires two complete hands", () => {
   assert.equal(classifyTwoHandShape([makeHand()]),null);
 });
 
+test("Two-hand contours distinguish rectangular gestures", () => {
+  assert.equal(classifyTwoHandShape(makeRectangleHands())?.label,"RETÂNGULO");
+});
+
