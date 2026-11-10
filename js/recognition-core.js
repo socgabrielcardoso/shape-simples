@@ -194,7 +194,7 @@ export function classifyQuadrilateral(points) {
     return { label: "RETÂNGULO", points: ordered };
   }
 
-  if (sideRatio < 1.34) {
+  if (sideRatio < 1.34 && firstParallel < 18 && secondParallel < 18) {
     return { label: "LOSANGO", points: ordered };
   }
 
