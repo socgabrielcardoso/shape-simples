@@ -27,6 +27,9 @@ jobs:
           set -euo pipefail
           find . -type f -name "*.js" -not -path "./node_modules/*" -print0 | xargs -0 -r -n1 node --check
 
+      - name: Run recognition regression tests
+        run: npm run test:recognition
+
       - name: Reject unresolved conflict markers
         shell: bash
         run: |

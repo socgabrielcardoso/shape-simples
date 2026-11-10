@@ -1,0 +1,8 @@
+{
+  "name": "shape-simples-recognition",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:recognition": "node --test tests/recognition.test.mjs"
+  }
+}
