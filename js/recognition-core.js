@@ -39,7 +39,8 @@ export function smoothDetectedHands(landmarks) {
     .map(hand => hand.map(point => ({ x: point?.x, y: point?.y, z: point?.z ?? 0 })))
     .filter(hand => hand.every(point => [point.x,point.y,point.z].every(Number.isFinite)))
     .filter(hand => hand.every(point => point.x >= -0.25 && point.x <= 1.25 && point.y >= -0.25 && point.y <= 1.25))
-    .sort((first, second) => palmCenter(first).x - palmCenter(second).x);
+    .sort((first, second) => palmCenter(first).x - palmCenter(second).x)
+    .slice(0,2);
 
   if (orderedHands.length !== smoothedHands.length) {
     smoothedHands = orderedHands;
