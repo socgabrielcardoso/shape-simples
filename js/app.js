@@ -146,6 +146,7 @@ async function startCamera() {
     elements.startButton.classList.add("is-hidden");
     setRuntime("ATIVO", "ready");
   } catch {
+    stopCamera();
     elements.startButton.disabled = false;
     elements.startButton.textContent = "TENTAR";
     setRuntime("NEGADO", "error");
