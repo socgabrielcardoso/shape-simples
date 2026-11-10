@@ -42,7 +42,7 @@ export function smoothDetectedHands(landmarks) {
     .sort((first, second) => palmCenter(first).x - palmCenter(second).x)
     .slice(0,2);
 
-  if (orderedHands.length !== smoothedHands.length) {
+  if (orderedHands.length !== smoothedHands.length || orderedHands.some((hand,i) => smoothedHands[i] && distance(palmCenter(hand),palmCenter(smoothedHands[i])) > 0.27)) {
     smoothedHands = orderedHands;
     return smoothedHands;
   }
