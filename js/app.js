@@ -423,6 +423,7 @@ elements.startButton.addEventListener("click", async () => {
 
 elements.video.addEventListener("loadedmetadata", resizeCanvas);
 window.addEventListener("beforeunload", stopCamera);
+document.addEventListener("visibilitychange", () => { if (document.hidden && cameraReady) stopCamera(); });
 window.addEventListener("resize", resizeCanvas);
 
 requestAnimationFrame(render);
