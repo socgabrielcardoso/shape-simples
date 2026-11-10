@@ -156,6 +156,7 @@ export function classifyQuadrilateral(points) {
   const sides = ordered.map((point, index) =>
     distance(point, ordered[(index + 1) % ordered.length])
   );
+  if (Math.min(...sides) < 0.008) return null;
   const angles = ordered.map((point, index) =>
     vertexAngle(
       ordered[(index + ordered.length - 1) % ordered.length],
