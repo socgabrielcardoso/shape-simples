@@ -139,3 +139,7 @@ test("Smoothing does not recover impossible missing numbers as landmarks", () =>
   resetHandSmoothing();const hand=makeHand();hand[8].x=NaN;assert.deepEqual(smoothDetectedHands([hand]),[]);
 });
 
+test("Adaptive smoothing can be reset between camera sessions", () => {
+  resetHandSmoothing();const base=makeHand(),shifted=makeHand();shifted[8].x+=.1;const before=smoothDetectedHands([base])[0][8].x;const after=smoothDetectedHands([shifted])[0][8].x;assert.ok(after>before && after<shifted[8].x);resetHandSmoothing();assert.equal(smoothDetectedHands([shifted])[0][8].x,shifted[8].x);
+});
+
