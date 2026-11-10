@@ -253,6 +253,7 @@ export function classifyTwoHandShape(hands) {
     return null;
   }
 
+  if (bridge > 1.05) return null;
   if (left.fingerSpan < left.palmWidth * 0.62 || right.fingerSpan < right.palmWidth * 0.62) {
     return null;
   }
