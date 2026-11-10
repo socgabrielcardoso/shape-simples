@@ -175,6 +175,7 @@ function canvasPoint(point) {
 
 function stabilizeShape(observation, now) {
   if (observation) {
+    if (now - shapeTracker.lastSeenAt > 400) { shapeTracker.candidate = ""; shapeTracker.count = 0; }
     shapeTracker.lastSeenAt = now;
 
     if (shapeTracker.candidate === observation.label) {
