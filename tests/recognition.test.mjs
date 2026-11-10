@@ -43,3 +43,7 @@ test("Palm centroid averages valid landmarks", () => {
   assert.deepEqual(averagePoint([p(.2,.4),p(.6,.8)]),{x:.4,y:.6000000000000001});
 });
 
+test("Empty centroid never becomes a plausible hand position", () => {
+  assert.equal(Number.isNaN(averagePoint([]).x),true);
+});
+
