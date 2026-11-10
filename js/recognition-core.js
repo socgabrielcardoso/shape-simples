@@ -233,7 +233,7 @@ export function classifyOneHandShape(hand) {
   if (!Number.isFinite(description.palmWidth) || description.palmWidth < 0.012) return null;
   const pinchRatio = distance(description.index, description.thumb) / Math.max(description.palmWidth, 0.0001);
 
-  if (pinchRatio > 0.38) {
+  if (pinchRatio > 0.33) {
     return null;
   }
 
