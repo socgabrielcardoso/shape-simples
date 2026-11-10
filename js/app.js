@@ -239,7 +239,7 @@ function updateEyeState(faceResult, now) {
     }
 
     const closedDuration = now - eyeTracker.closedAt;
-    setEyeOutput(closedDuration >= 1100 ? "DORMINDO" : "PISCANDO");
+    setEyeOutput(closedDuration >= 1100 ? "OLHOS FECHADOS" : "PISCANDO");
     return;
   }
 
