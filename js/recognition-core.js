@@ -12,6 +12,7 @@ export function visualPoint(point) {
 
 
 export function distance(a, b) {
+  if (![a?.x,a?.y,b?.x,b?.y].every(Number.isFinite)) return Infinity;
   return Math.hypot(a.x - b.x, a.y - b.y);
 }
 
