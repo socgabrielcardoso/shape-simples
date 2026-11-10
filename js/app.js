@@ -210,8 +210,8 @@ function setEyeOutput(state) {
 }
 
 function updateEyeState(faceResult, now) {
-  const face = faceResult.faceLandmarks?.[0];
-  const categories = faceResult.faceBlendshapes?.[0]?.categories;
+  const face = faceResult?.faceLandmarks?.[0];
+  const categories = faceResult?.faceBlendshapes?.[0]?.categories;
 
   if (!face || !categories) {
     if (now - eyeTracker.lastFaceAt > 500) {
