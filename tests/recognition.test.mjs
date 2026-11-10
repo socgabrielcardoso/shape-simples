@@ -47,3 +47,7 @@ test("Empty centroid never becomes a plausible hand position", () => {
   assert.equal(Number.isNaN(averagePoint([]).x),true);
 });
 
+test("Mirrored camera coordinates remain consistent", () => {
+  assert.equal(visualPoint(p(.2,.3)).x,.8);
+});
+
